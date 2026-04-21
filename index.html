@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>다름에도 함께할 때 조화로워 · 인천공항중학교 통합교육부</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--c1:#7B5EA7;--accent:#E84393;--td:#2c2c2c;--tm:#555;--tl:#888;}
+body{font-family:'Noto Sans KR',sans-serif;background:#faf9f7;color:var(--td);}
+
+nav{background:white;border-bottom:1px solid #eee;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,0.05);}
+.nav-logo{font-size:15px;font-weight:700;color:var(--c1);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{text-decoration:none;font-size:14px;color:var(--tm);transition:color .2s;}
+.nav-links a:hover{color:var(--c1);}
+
+.hero{background:linear-gradient(135deg,#f0ebf8 0%,#e8f4f8 50%,#fce8f0 100%);padding:90px 48px 80px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:rgba(123,94,167,0.07);}
+.hero::after{content:'';position:absolute;bottom:-100px;right:-60px;width:500px;height:500px;border-radius:50%;background:rgba(232,67,147,0.05);}
+.hero-badge{display:inline-block;background:var(--c1);color:white;font-size:15px;font-weight:600;padding:8px 24px;border-radius:20px;margin-bottom:24px;letter-spacing:0.3px;}
+.hero h1{font-family:'Gowun Batang',serif;font-size:58px;font-weight:700;color:var(--c1);line-height:1.25;margin-bottom:18px;letter-spacing:2px;position:relative;z-index:1;animation:fadeUp .7s ease both;}
+.hero h1 .acc{color:var(--accent);}
+.h1-row{display:inline-flex;align-items:center;gap:14px;color:var(--c1);}
+.cherry{width:74px;height:74px;flex-shrink:0;filter:drop-shadow(0 4px 14px rgba(232,67,147,0.25));animation:blossomFloat 5s ease-in-out infinite;}
+@keyframes blossomFloat{0%,100%{transform:rotate(-12deg) scale(1);}50%{transform:rotate(12deg) scale(1.07);}}
+.hero-sub{font-size:17px;color:var(--tm);font-weight:300;margin-bottom:8px;}
+.hero-date{font-size:13px;color:var(--tl);margin-bottom:52px;} .school-pill{display:inline-block;background:#fce4ec;color:#7B5EA7;font-size:13px;font-weight:700;padding:8px 22px;border-radius:20px;letter-spacing:0.3px;margin-top:10px;}
+.hero-bottom{display:flex;align-items:flex-start;justify-content:center;gap:24px;max-width:860px;margin:0 auto;position:relative;z-index:1;animation:fadeUp .6s .2s ease both;}
+.cq-label{display:flex;flex-direction:column;align-items:center;flex-shrink:0;padding-top:2px;}
+.cq-badge{background:var(--accent);color:white;font-size:12px;font-weight:700;padding:7px 13px;border-radius:8px;margin-bottom:10px;white-space:nowrap;}
+.cq-line{width:2px;height:120px;background:linear-gradient(to bottom,var(--accent),transparent);border-radius:2px;}
+.bubbles{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:12px;flex:1;}
+.bubble{background:white;border-radius:28px;padding:12px 20px;font-size:14px;color:var(--td);box-shadow:0 2px 14px rgba(0,0,0,0.08);display:flex;align-items:center;gap:10px;transition:transform .2s,box-shadow .2s;}
+.bubble:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12);}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+.dp{background:var(--c1);}.dk{background:var(--accent);}.db{background:#4A90D9;}.dg{background:#2BAE84;}
+
+.section{max-width:1100px;margin:0 auto;padding:72px 32px;}
+.sec-label{font-size:14px;font-weight:700;letter-spacing:2px;color:var(--c1);text-transform:uppercase;margin-bottom:12px;}
+.sec-title{font-size:38px;font-weight:700;color:var(--td);margin-bottom:40px;letter-spacing:-.5px;}
+
+.q-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.q-card{background:white;border-radius:14px;padding:16px 20px;border:1px solid #f0f0f0;transition:transform .2s,box-shadow .2s;cursor:pointer;position:relative;overflow:hidden;}
+.q-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:4px 0 0 4px;}
+.q-card:nth-child(1)::before{background:var(--c1);}
+.q-card:nth-child(2)::before{background:var(--accent);}
+.q-card:nth-child(3)::before{background:#4A90D9;}
+.q-card:nth-child(4)::before{background:#2BAE84;}
+.q-card:nth-child(5)::before{background:#F5A623;}
+.q-card:nth-child(6)::before{background:#7B5EA7;} .q-card:nth-child(7)::before{background:#E84393;} .q-card:nth-child(8)::before{background:#26A69A;} .q-card:nth-child(9)::before{background:#EF6C00;} .q-card:nth-child(10)::before{background:#5C6BC0;} .q-card:nth-child(11)::before{background:#00897B;} .q-card:nth-child(12)::before{background:#8D6E63;} .q-card:nth-child(13)::before{background:#7B5EA7;} .q-card:nth-child(14)::before{background:#E84393;} .q-card:nth-child(15)::before{background:#2BAE84;}
+.q-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+.q-num{font-size:11px;font-weight:700;color:var(--tl);letter-spacing:1px;margin-bottom:6px;}
+.q-text{font-size:15px;font-weight:500;line-height:1.6;color:var(--td);}
+.q-icon{font-size:20px;margin-bottom:8px;}
+.answer-panel{background:#f5f1fb;border-radius:18px;padding:28px;margin-top:20px;display:none;border-left:4px solid var(--c1);}
+.answer-panel.active{display:block;}
+.answer-panel p{font-size:16px;line-height:1.8;color:var(--tm);}
+
+.gallery-sec{background:#1a1a2e;padding:80px 24px;}
+.gallery-inner{max-width:820px;margin:0 auto;}
+.gallery-hdr{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px;}
+.g-label{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#9B8DC4;text-transform:uppercase;margin-bottom:10px;}
+.g-title{font-size:32px;font-weight:700;color:white;margin-bottom:8px;}
+.g-desc{font-size:15px;color:#9B8DC4;}
+.admin-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#ccc;padding:11px 18px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:background .2s,color .2s;white-space:nowrap;align-self:flex-start;margin-top:6px;}
+.admin-btn:hover{background:rgba(155,141,196,0.2);color:white;}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.art-card{border-radius:14px;overflow:hidden;position:relative;background:#22213a;aspect-ratio:3/4;}
+.art-card.filled{cursor:pointer;background:#111;}
+.art-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#3a3a5a;font-size:13px;min-height:180px;}
+.art-placeholder-icon{font-size:28px;opacity:0.2;}
+.art-card img{width:100%;height:100%;object-fit:cover;display:block;}
+.art-overlay{position:absolute;bottom:0;left:0;right:0;padding:18px;background:linear-gradient(transparent,rgba(0,0,0,0.8));color:white;opacity:0;transition:opacity .3s;}
+.art-card.filled:hover .art-overlay{opacity:1;}
+.art-title{font-size:15px;font-weight:700;}
+.art-sub{font-size:12px;opacity:0.65;margin-top:3px;}
+.g-loading{text-align:center;color:#9B8DC4;padding:40px;font-size:14px;}
+
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:500;align-items:center;justify-content:center;}
+.overlay.open{display:flex;}
+.admin-modal{background:#1e1e32;border-radius:20px;padding:36px;width:92%;max-width:500px;color:white;position:relative;max-height:90vh;overflow-y:auto;}
+.modal-ttl{font-size:20px;font-weight:700;margin-bottom:22px;}
+.close-x{position:absolute;top:18px;right:18px;background:rgba(255,255,255,0.08);border:none;color:white;width:34px;height:34px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.close-x:hover{background:rgba(255,255,255,0.18);}
+.pw-row{display:flex;gap:8px;margin-bottom:10px;}
+.pw-inp{flex:1;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:white;font-size:14px;padding:12px 16px;font-family:'Noto Sans KR',sans-serif;outline:none;}
+.pw-inp::placeholder{color:#555;}
+.pw-btn{padding:12px 18px;background:var(--c1);color:white;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
+.pw-err{font-size:12px;color:#FF6B8A;margin-bottom:14px;display:none;}
+.pw-err.show{display:block;}
+.upload-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+.slot-wrap{display:flex;flex-direction:column;gap:7px;}
+.upload-slot{background:rgba(255,255,255,0.04);border:1.5px dashed rgba(255,255,255,0.15);border-radius:11px;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;transition:border-color .2s;}
+.upload-slot:hover{border-color:rgba(155,141,196,0.55);}
+.upload-slot input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.slot-inner{display:flex;flex-direction:column;align-items:center;gap:6px;pointer-events:none;}
+.slot-icon{font-size:24px;opacity:0.35;}
+.slot-lbl{font-size:11px;color:#777;}
+.upload-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:9px;}
+.title-inp{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#bbb;font-size:11px;padding:7px 10px;font-family:'Noto Sans KR',sans-serif;outline:none;}
+.title-inp::placeholder{color:#444;}
+.action-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.save-btn{padding:11px 22px;background:var(--accent);color:white;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:opacity .2s;}
+.save-btn:hover{opacity:.85;}
+.save-btn:disabled{opacity:.4;cursor:not-allowed;}
+.save-ok{font-size:12px;color:#6EE890;display:none;}
+.save-ok.show{display:block;}
+
+.img-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:600;align-items:center;justify-content:center;}
+.img-overlay.open{display:flex;}
+.img-modal{background:#1a1a2e;border-radius:20px;padding:32px;max-width:500px;width:90%;color:white;position:relative;}
+.img-art{border-radius:12px;overflow:hidden;margin-bottom:18px;height:300px;background:#111;display:flex;align-items:center;justify-content:center;}
+.img-art img{width:100%;height:100%;object-fit:contain;}
+.img-ttl{font-size:20px;font-weight:700;}
+.img-meta{font-size:13px;color:#9B8DC4;margin-top:4px;}
+
+.pledge-sec{background:var(--c1);padding:72px 24px 60px;text-align:center;}
+.pledge-inner{max-width:620px;margin:0 auto;}
+.pledge-title{font-size:30px;font-weight:700;color:white;margin-bottom:18px;}
+.pledge-sub{font-size:16px;color:rgba(255,255,255,0.75);line-height:1.75;margin-bottom:36px;}
+.pledge-row{display:flex;gap:10px;max-width:500px;margin:0 auto 16px;}
+.pledge-inp{flex:1;padding:14px 18px;border-radius:12px;border:none;font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;}
+.pledge-btn{padding:14px 22px;background:var(--accent);color:white;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;transition:opacity .2s;}
+.pledge-btn:hover{opacity:.85;}
+.pledge-ctr{font-size:13px;color:rgba(255,255,255,0.55);}
+.pledge-ctr strong{color:rgba(255,255,255,0.9);}
+
+.corkboard{background:#fffde7;background-image:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(0,0,0,0.03) 28px,rgba(0,0,0,0.03) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(0,0,0,0.03) 28px,rgba(0,0,0,0.03) 29px);padding:60px 24px 70px;box-shadow:inset 0 0 60px rgba(0,0,0,0.06);}
+.cork-inner{max-width:820px;margin:0 auto;}
+.cork-hdr{margin-bottom:36px;}
+.cork-lbl{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#b8860b;text-transform:uppercase;margin-bottom:8px;}
+.cork-title{font-family:'Gowun Batang',serif;font-size:30px;font-weight:700;color:#5d4037;margin-bottom:6px;text-shadow:none;}
+.cork-count{font-size:14px;color:#8d6e63;}
+.cork-count strong{color:#4e342e;}
+.notes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:24px;}
+.note{position:relative;padding:22px 16px 18px;min-height:128px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:3px;box-shadow:3px 4px 14px rgba(0,0,0,0.28),inset 0 -2px 6px rgba(0,0,0,0.06);animation:noteIn .4s cubic-bezier(0.34,1.56,0.64,1) both;}
+.note::before{content:'';position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#e8e8e8,#aaa);box-shadow:0 1px 3px rgba(0,0,0,0.4);z-index:2;}
+.note::after{content:'';position:absolute;bottom:0;right:0;width:26px;height:26px;background:linear-gradient(225deg,rgba(0,0,0,0.12) 50%,transparent 50%);border-radius:0 0 3px 0;}
+.note-text{font-family:'Gowun Batang',serif;font-size:15px;line-height:1.65;text-align:center;color:#3a2a1a;word-break:keep-all;position:relative;z-index:1;}
+.note:hover{transform:scale(1.07) rotate(0deg) !important;transition:transform .2s;z-index:10;}
+.ny{background:#FFF176;}.npk{background:#F8BBD0;}.ng{background:#C8E6C9;}.nb{background:#BBDEFB;}.npc{background:#FFCCBC;}.nl{background:#E1BEE7;}
+@keyframes noteIn{from{opacity:0;transform:scale(0.7) rotate(var(--r,-4deg));}to{opacity:1;transform:scale(1) rotate(var(--r,-4deg));}}
+.cork-empty{color:#bca97a;font-size:15px;padding:48px 0;text-align:center;grid-column:1/-1;}
+
+footer{background:#2a1f45;padding:40px 48px;text-align:center;}
+.ft-school{font-size:16px;font-weight:700;color:white;margin-bottom:8px;}
+.ft-sub{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.8;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:640px){
+  .hero h1{font-size:34px;}.q-grid{grid-template-columns:1fr;}.g-grid{grid-template-columns:1fr 1fr;}
+  nav{padding:0 20px;}.hero-bottom{flex-direction:column;align-items:center;}.cq-line{height:0;}
+  .upload-slots{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">인천공항중학교 통합교육부</div>
+  <ul class="nav-links">
+    <li><a href="#questions">질문하기</a></li>
+    <li><a href="#gallery">미술 갤러리</a></li>
+    <li><a href="#pledge">함께해요</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">제46회 장애인의 날 · 4월 20일</div>
+  <h1>다름에도 <span class="acc">함께할 때</span><br>
+    <span class="h1-row">조화로워
+      <svg class="cherry" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="pg1" cx="50%" cy="70%" r="60%"><stop offset="0%" stop-color="#fff0f5"/><stop offset="100%" stop-color="#F9B8D0"/></radialGradient>
+          <radialGradient id="pg2" cx="50%" cy="70%" r="60%"><stop offset="0%" stop-color="#fde8f0"/><stop offset="100%" stop-color="#F082B0"/></radialGradient>
+          <radialGradient id="cg"  cx="40%" cy="35%" r="65%"><stop offset="0%" stop-color="#FFD6E8"/><stop offset="100%" stop-color="#E8448A"/></radialGradient>
+        </defs>
+        <g transform="translate(50,50)">
+          <g transform="rotate(0)">  <path d="M0,0 C-10,-8 -12,-28 0,-34 C12,-28 10,-8 0,0Z" fill="url(#pg1)" stroke="#F4AACB" stroke-width="0.4"/><line x1="0" y1="-2" x2="0" y2="-30" stroke="#F9C0D6" stroke-width="0.6" opacity="0.5"/></g>
+          <g transform="rotate(72)"> <path d="M0,0 C-10,-8 -12,-28 0,-34 C12,-28 10,-8 0,0Z" fill="url(#pg2)" stroke="#F4AACB" stroke-width="0.4"/><line x1="0" y1="-2" x2="0" y2="-30" stroke="#F9C0D6" stroke-width="0.6" opacity="0.5"/></g>
+          <g transform="rotate(144)"><path d="M0,0 C-10,-8 -12,-28 0,-34 C12,-28 10,-8 0,0Z" fill="url(#pg1)" stroke="#F4AACB" stroke-width="0.4"/><line x1="0" y1="-2" x2="0" y2="-30" stroke="#F9C0D6" stroke-width="0.6" opacity="0.5"/></g>
+          <g transform="rotate(216)"><path d="M0,0 C-10,-8 -12,-28 0,-34 C12,-28 10,-8 0,0Z" fill="url(#pg2)" stroke="#F4AACB" stroke-width="0.4"/><line x1="0" y1="-2" x2="0" y2="-30" stroke="#F9C0D6" stroke-width="0.6" opacity="0.5"/></g>
+          <g transform="rotate(288)"><path d="M0,0 C-10,-8 -12,-28 0,-34 C12,-28 10,-8 0,0Z" fill="url(#pg1)" stroke="#F4AACB" stroke-width="0.4"/><line x1="0" y1="-2" x2="0" y2="-30" stroke="#F9C0D6" stroke-width="0.6" opacity="0.5"/></g>
+          <line x1="0" y1="0" x2="4"  y2="-12" stroke="#E8448A" stroke-width="0.8" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-4" y2="-11" stroke="#E8448A" stroke-width="0.8" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="0"  y2="-13" stroke="#E8448A" stroke-width="0.8" stroke-linecap="round"/>
+          <circle cx="4"  cy="-12" r="1.5" fill="#E8448A"/>
+          <circle cx="-4" cy="-11" r="1.5" fill="#E8448A"/>
+          <circle cx="0"  cy="-13" r="1.5" fill="#E8448A"/>
+          <circle r="7" fill="url(#cg)"/><circle r="4" fill="#FFE8F2" opacity="0.7"/>
+        </g>
+      </svg>
+    </span>
+  </h1>
+  <p class="hero-sub">장애인의 날을 맞아, 질문하며 이해를 넓혀요!</p>
+  <p class="hero-date"><span class="school-pill">인천공항중학교 통합교육부</span></p>
+  <div class="hero-bottom">
+    <div class="cq-label">
+      <div class="cq-badge">핵심질문</div>
+      <div class="cq-line"></div>
+    </div>
+    <div class="bubbles">
+      <div class="bubble"><span class="dot dp"></span>휠체어 친구와 어떻게 이동할까?</div>
+      <div class="bubble"><span class="dot dk"></span>장애가 있는 친구와 친해지려면?</div>
+      <div class="bubble"><span class="dot db"></span>수업 시간에 도움이 필요한 친구를 보면?</div>
+      <div class="bubble"><span class="dot dg"></span>장애 친구에게 무례하지 않게 도울 수 있을까?</div>
+      <div class="bubble"><span class="dot dp"></span>장애인은 어떤지 내가 물어봐도 될까?</div>
+      <div class="bubble"><span class="dot dg"></span>장애 친구의 재능을 발견하면 어떻게 할까?</div>
+      <div class="bubble"><span class="dot db"></span>내가 장애를 가진다면 어떻게 대해주길 바랄까?</div>
+      <div class="bubble"><span class="dot dk"></span>통합교육이 우리 모두에게 왜 중요할까?</div>
+    </div>
+  </div>
+</div>
+
+<div id="questions" class="section">
+  <div class="sec-label">질문 중심 이해하기</div>
+  <div class="sec-title">이런 질문, 함께 생각해봐요!</div>
+  <div class="q-grid" id="qGrid"></div>
+  <div class="answer-panel" id="answerPanel"><p id="answerText"></p></div>
+</div>
+
+<div id="gallery" class="gallery-sec">
+  <div class="gallery-inner">
+    <div class="gallery-hdr">
+      <div>
+        <div class="g-label">특수학급 미술 갤러리</div>
+        <div class="g-title">학생 작품 전시 및 행사 사진</div>
+        <div class="g-desc">특수학급 학생들의 개성 넘치는 작품을 감상해 보세요.</div>
+      </div>
+      <button class="admin-btn" onclick="openAdmin()">🔒 관리자 업로드</button>
+    </div>
+    <div class="g-grid" id="galleryGrid">
+      <div class="g-loading" style="grid-column:1/-1">작품을 불러오는 중...</div>
+    </div>
+  </div>
+</div>
+
+<div id="pledge" class="pledge-sec">
+  <div class="pledge-inner">
+    <div class="pledge-title">함께하는 다짐</div>
+    <p class="pledge-sub">장애인의 날을 맞이하여, 나의 다짐을 남겨주세요.<br>우리 모두의 작은 다짐이 모여 더 좋은 세상을 만들어요.</p>
+    <div class="pledge-row">
+      <input class="pledge-inp" id="pledgeInput" placeholder="나의 다짐을 입력해주세요..." maxlength="40">
+      <button class="pledge-btn" onclick="addPledge()">다짐 남기기</button>
+    </div>
+    <p class="pledge-ctr">지금까지 <strong id="pledgeCount">0</strong>개의 다짐이 모였어요</p>
+  </div>
+</div>
+
+<div class="corkboard">
+  <div class="cork-inner">
+    <div class="cork-hdr">
+      <div class="cork-lbl">다짐 모음</div>
+      <div class="cork-title">우리들의 다짐</div>
+      <div class="cork-count">총 <strong id="dashCount">0</strong>개의 다짐이 기록되었어요</div>
+    </div>
+    <div class="notes-grid" id="notesGrid">
+      <div class="cork-empty">다짐을 불러오는 중...</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-school">인천공항중학교 통합교육부</div>
+  <div class="ft-sub">제46회 장애인의 날 행사 · 4월 20일<br>질문하며 배우는 장애와 통합교육 이야기</div>
+</footer>
+
+<!-- ADMIN OVERLAY -->
+<div class="overlay" id="adminOverlay">
+  <div class="admin-modal">
+    <button class="close-x" onclick="closeAdmin()">✕</button>
+    <div id="loginView">
+      <div class="modal-ttl">🔒 관리자 인증</div>
+      <div class="pw-row">
+        <input class="pw-inp" id="pwInput" type="password" placeholder="비밀번호 입력" onkeydown="if(event.key==='Enter')checkPw()">
+        <button class="pw-btn" onclick="checkPw()">확인</button>
+      </div>
+      <div class="pw-err" id="pwErr">비밀번호가 올바르지 않습니다.</div>
+    </div>
+    <div id="uploadView" style="display:none;">
+      <div class="modal-ttl">🖼 작품 이미지 업로드</div>
+      <div class="upload-slots" id="uploadSlots"></div>
+      <div class="action-bar">
+        <button class="save-btn" id="saveBtn" onclick="saveGallery()">💾 저장하기</button>
+        <span class="save-ok" id="saveOk"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IMAGE MODAL -->
+<div class="img-overlay" id="imgOverlay" onclick="if(event.target===this)closeImg()">
+  <div class="img-modal">
+    <button class="close-x" onclick="closeImg()">✕</button>
+    <div class="img-art" id="imgArt"></div>
+    <div class="img-ttl" id="imgTtl"></div>
+    <div class="img-meta" id="imgMeta"></div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════
+   SUPABASE CONFIG
+══════════════════════════════ */
+const SB_URL = 'https://eiofpatobqzbyuevphfq.supabase.co';
+const SB_KEY = 'sb_publishable__IsesmR9dk0CGAus-IY4NQ_nDDTPL9Q';
+
+const HEADERS = {
+  'apikey': SB_KEY,
+  'Authorization': `Bearer ${SB_KEY}`,
+  'Content-Type': 'application/json',
+  'Prefer': 'return=representation'
+};
+
+async function sbGet(table, params = '') {
+  const res = await fetch(`${SB_URL}/rest/v1/${table}?${params}`, { headers: HEADERS });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+async function sbUpsert(table, body) {
+  const res = await fetch(`${SB_URL}/rest/v1/${table}`, {
+    method: 'POST',
+    headers: { ...HEADERS, 'Prefer': 'resolution=merge-duplicates,return=representation' },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+async function sbInsert(table, body) {
+  const res = await fetch(`${SB_URL}/rest/v1/${table}`, {
+    method: 'POST',
+    headers: HEADERS,
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+
+/* ══════════════════════════════
+   CONSTANTS
+══════════════════════════════ */
+const ADMIN_PW    = '0420';
+const MAX_SLOTS   = 6;
+const NOTE_COLORS = ['ny','npk','ng','nb','npc','nl'];
+const NOTE_ROTS   = [-4,-3,-2,-1,0,1,2,3,4];
+
+let slots   = Array.from({length: MAX_SLOTS}, (_, i) => ({id: i, title: '', src: null}));
+let pledges = [];
+
+/* ══════════════════════════════
+   QUESTIONS
+══════════════════════════════ */
+const questions = [
+  {icon:'♿',num:'Q 01',text:'휠체어 친구와 함께 이동할 때 어떻게 하면 좋을까요?',answer:'휠체어를 사용하는 친구와 이동할 때는 먼저 친구에게 "도움이 필요해?" 하고 물어보세요. 허락 없이 갑자기 밀거나 잡으면 당황할 수 있어요. 엘리베이터나 경사로를 함께 찾고, 친구의 눈높이에 맞추어 이야기하는 것도 중요해요.'},
+  {icon:'🤝',num:'Q 02',text:'수업 시간에 도움이 필요한 친구를 보면 어떻게 할 수 있을까요?',answer:'먼저 자연스럽게 "같이 해볼까?" 하고 말을 건네보세요. 대신 해주는 것보다 함께 해나가는 것이 더 좋아요. 선생님께 도움을 요청하는 방법도 있고, 모둠 활동에서 역할을 나누어 모두가 참여할 수 있게 하는 것도 방법이에요.'},
+  {icon:'💬',num:'Q 03',text:'장애가 있는 친구와 더 친해지려면 어떻게 해야 할까요?',answer:'장애가 있는 친구도 좋아하는 것, 싫어하는 것, 관심사가 있어요. 장애에 집중하기보다는 그 친구 자체에 관심을 가져보세요. "좋아하는 게 뭐야?", "같이 밥 먹을까?" 같은 일상적인 대화로 시작해보는 게 좋아요.'},
+  {icon:'🙋',num:'Q 04',text:'장애가 있는 친구에게 무례하지 않게 도움을 줄 수 있을까요?',answer:'"혹시 도움이 필요해?" 라고 먼저 물어보는 것이 가장 중요해요. 필요하지 않은데 억지로 도우려 하면 오히려 부담이 될 수 있어요. 친구가 원하는 방식으로 도우면 서로 편안한 관계를 만들 수 있어요.'},
+  {icon:'❓',num:'Q 05',text:'장애에 대해 궁금한 게 있을 때 직접 물어봐도 될까요?',answer:'친구와 충분히 친해진 뒤, 진심 어린 마음으로 정중하게 물어본다면 괜찮을 수 있어요. 다만 처음 보는 사람에게 바로 물어보면 상처가 될 수 있어요. 모를 때는 선생님께 여쭤보거나, 관련 책이나 자료를 찾아보는 것도 좋은 방법이에요.'},
+  {icon:'🌈',num:'Q 06',text:'장애인을 이해하기 위해 내가 할 수 있는 첫 번째 행동은?',answer:'오늘 이 자리에서 질문하고 생각해본 것처럼, 관심을 갖고 알아가려는 마음이 첫 번째예요! 편견 없이 바라보고, 먼저 미소 짓고 인사해보는 것, 그것이 모든 이해의 시작이에요.'},
+  {icon:'🏫',num:'Q 07',text:'학교에서 장애 친구가 소외되지 않도록 내가 할 수 있는 일은?',answer:'쉬는 시간에 함께 이야기하거나, 모둠 활동에서 자연스럽게 역할을 나눠보세요. 작은 배려가 쌓이면 장애 친구도, 나도 더 즐거운 학교생활을 할 수 있어요. 먼저 다가가는 용기가 가장 중요해요!'},
+  {icon:'🗣️',num:'Q 08',text:'장애가 있는 친구를 소개받았을 때 어떻게 인사하면 좋을까요?',answer:'평소처럼 자연스럽게 인사하면 돼요! "안녕, 나는 ○○야"처럼 편하게 말을 걸어보세요. 장애 여부보다 상대방을 한 명의 친구로 대하는 것이 가장 중요해요.'},
+  {icon:'💡',num:'Q 09',text:'장애에 대한 잘못된 편견을 친구가 말할 때 어떻게 할까요?',answer:'그 자리에서 바로 "그렇지 않을 수도 있어"라고 부드럽게 이야기해보세요. 화내거나 비난하기보다는 내가 알고 있는 것을 차분하게 나눠주는 것이 더 효과적이에요. 우리 모두 배워가는 중이니까요.'},
+  {icon:'🤲',num:'Q 10',text:'통합교육이 우리 모두에게 왜 중요할까요?',answer:'다양한 친구들과 함께 생활하면서 배려, 협력, 공감 능력이 자라요. 장애 친구뿐 아니라 모든 학생이 서로에게서 배울 수 있어요. 다름을 이해하는 힘이 바로 통합교육에서 시작돼요.'},
+  {icon:'🎨',num:'Q 11',text:'장애 친구의 특별한 재능이나 관심사를 발견하면 어떻게 하면 좋을까요?',answer:'진심으로 칭찬하고 함께 즐겨보세요! 장애 여부와 관계없이 누구나 잘하는 것이 있어요. 그 친구의 강점을 알아봐 주는 것만으로도 큰 힘이 될 수 있어요. "너 정말 잘한다!"는 말 한마디가 소중한 자신감이 돼요.'},
+  {icon:'🌱',num:'Q 12',text:'내가 장애를 가지게 된다면 친구들에게 어떻게 대해주길 바랄까요?',answer:'특별하게 대하거나 불쌍하게 보는 게 아니라, 그냥 평범한 친구로 대해주길 바랄 거예요. 필요할 때 도움을 주되 늘 물어봐 주고, 함께 웃고 이야기할 수 있는 친구가 되어주길 바라겠죠. 이 마음이 바로 진정한 통합이에요.'},
+  {icon:'🧩',num:'Q 13',text:'장애의 종류가 다양하다는 것을 알고 있나요? 어떤 것들이 있을까요?',answer:'장애는 지체장애, 시각장애, 청각장애, 언어장애, 지적장애, 자폐성장애, 정신장애 등 매우 다양해요. 겉으로 보이지 않는 장애도 많아요. 장애의 종류를 이해하면 친구를 더 잘 도울 수 있고, 불필요한 오해도 줄어들어요.'},
+  {icon:'🤗',num:'Q 14',text:'장애 친구가 힘들어 보일 때 어떻게 위로해줄 수 있을까요?',answer:'곁에 있어 주는 것만으로도 큰 위로가 돼요. "괜찮아?", "내가 뭘 도와줄까?" 같은 짧은 말이 큰 힘이 되기도 해요. 섣불리 해결하려 하기보다 먼저 들어주는 자세가 가장 중요해요.'},
+  {icon:'🌍',num:'Q 15',text:'장애인이 살기 좋은 세상을 만들기 위해 우리 학교에서 할 수 있는 일은?',answer:'경사로·엘리베이터 같은 편의시설을 잘 이용하고, 장애 친구 전용 시설을 함부로 사용하지 않는 것부터 시작해요. 함께하는 행사나 활동을 기획할 때 모두가 참여할 수 있는지 생각해보는 습관, 그것이 모두를 위한 학교를 만드는 첫걸음이에요.'}
+];
+
+let activeQ = null;
+function renderQuestions() {
+  const g = document.getElementById('qGrid');
+  questions.forEach((q, i) => {
+    const c = document.createElement('div'); c.className = 'q-card';
+    c.innerHTML = `<div class="q-icon">${q.icon}</div><div class="q-num">${q.num}</div><div class="q-text">${q.text}</div>`;
+    c.onclick = () => {
+      const p = document.getElementById('answerPanel');
+      if (activeQ === i) { p.classList.remove('active'); activeQ = null; }
+      else { document.getElementById('answerText').textContent = q.answer; p.classList.add('active'); activeQ = i; p.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+    };
+    g.appendChild(c);
+  });
+}
+
+/* ══════════════════════════════
+   GALLERY
+══════════════════════════════ */
+async function loadGallery() {
+  try {
+    const data = await sbGet('gallery', 'order=id.asc');
+    if (data && data.length) {
+      data.forEach(row => {
+        if (slots[row.id]) slots[row.id] = { id: row.id, title: row.title || '', src: row.src || null };
+      });
+    }
+  } catch(e) { console.error('Gallery load error:', e); }
+  renderGallery();
+}
+
+function renderGallery() {
+  const g = document.getElementById('galleryGrid'); g.innerHTML = '';
+  slots.forEach((s, i) => {
+    const c = document.createElement('div');
+    c.className = 'art-card' + (s.src ? ' filled' : '');
+    if (s.src) {
+      const img = document.createElement('img'); img.src = s.src; img.alt = s.title || `작품 ${i+1}`; c.appendChild(img);
+      const ov = document.createElement('div'); ov.className = 'art-overlay';
+      ov.innerHTML = `<div class="art-title">${s.title || `작품 ${i+1}`}</div><div class="art-sub">특수학급 학생 작품 · 2025</div>`;
+      c.appendChild(ov); c.onclick = () => openImg(s, i);
+    } else {
+      c.innerHTML = `<div class="art-placeholder"><div class="art-placeholder-icon">🎨</div><div>작품 ${i+1}</div></div>`;
+    }
+    g.appendChild(c);
+  });
+}
+
+/* ADMIN */
+function openAdmin() {
+  document.getElementById('loginView').style.display = 'block';
+  document.getElementById('uploadView').style.display = 'none';
+  document.getElementById('pwInput').value = '';
+  document.getElementById('pwErr').classList.remove('show');
+  document.getElementById('adminOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('pwInput').focus(), 120);
+}
+function closeAdmin() { document.getElementById('adminOverlay').classList.remove('open'); }
+
+function checkPw() {
+  if (document.getElementById('pwInput').value === ADMIN_PW) {
+    document.getElementById('loginView').style.display = 'none';
+    document.getElementById('uploadView').style.display = 'block';
+    document.getElementById('saveOk').classList.remove('show');
+    renderAdminSlots();
+  } else {
+    document.getElementById('pwErr').classList.add('show');
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwInput').focus();
+  }
+}
+
+function renderAdminSlots() {
+  const c = document.getElementById('uploadSlots'); c.innerHTML = '';
+  slots.forEach((s, i) => {
+    const w = document.createElement('div'); w.className = 'slot-wrap';
+    const sl = document.createElement('div'); sl.className = 'upload-slot';
+    if (s.src) { const img = document.createElement('img'); img.src = s.src; sl.appendChild(img); }
+    else { sl.innerHTML = `<div class="slot-inner"><div class="slot-icon">🖼</div><div class="slot-lbl">업로드</div></div>`; }
+    const fi = document.createElement('input'); fi.type = 'file'; fi.accept = 'image/*';
+    fi.onchange = e => handleUpload(e, i);
+    sl.appendChild(fi);
+    const ti = document.createElement('input'); ti.type = 'text'; ti.className = 'title-inp';
+    ti.placeholder = '작품 제목'; ti.value = s.title;
+    ti.oninput = e => { slots[i].title = e.target.value; };
+    w.appendChild(sl); w.appendChild(ti); c.appendChild(w);
+  });
+}
+
+function handleUpload(e, idx) {
+  const f = e.target.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = ev => { slots[idx].src = ev.target.result; renderAdminSlots(); renderGallery(); };
+  r.readAsDataURL(f);
+}
+
+async function saveGallery() {
+  const btn = document.getElementById('saveBtn');
+  const ok  = document.getElementById('saveOk');
+  btn.disabled = true; btn.textContent = '저장 중...';
+  try {
+    const payload = slots.map(s => ({ id: s.id, title: s.title || '', src: s.src || null }));
+    await sbUpsert('gallery', payload);
+    ok.textContent = '✓ 저장 완료!'; ok.classList.add('show');
+    renderGallery();
+    setTimeout(() => ok.classList.remove('show'), 2500);
+  } catch(e) {
+    ok.textContent = '❌ 저장 실패: ' + e.message; ok.classList.add('show');
+  }
+  btn.disabled = false; btn.textContent = '💾 저장하기';
+}
+
+function openImg(s, i) {
+  document.getElementById('imgArt').innerHTML = `<img src="${s.src}" alt="${s.title}">`;
+  document.getElementById('imgTtl').textContent = s.title || `작품 ${i+1}`;
+  document.getElementById('imgMeta').textContent = '특수학급 학생 작품 · 2025';
+  document.getElementById('imgOverlay').classList.add('open');
+}
+function closeImg() { document.getElementById('imgOverlay').classList.remove('open'); }
+
+/* ══════════════════════════════
+   PLEDGES
+══════════════════════════════ */
+const DEFAULT_PLEDGES = [
+  { content: '장애 친구에게 먼저 말 걸어볼게요' },
+  { content: '도움이 필요한지 물어볼게요' },
+  { content: '편견 없이 친구로 대할게요' },
+  { content: '모두 함께 놀이할 방법을 찾을게요' }
+];
+
+async function loadPledges() {
+  try {
+    const data = await sbGet('pledges', 'order=created_at.asc');
+    pledges = data || [];
+  } catch(e) { console.error('Pledges load error:', e); pledges = []; }
+  renderNotes();
+}
+
+function allPledges() {
+  return [...DEFAULT_PLEDGES, ...pledges];
+}
+
+function updateCount() {
+  const total = allPledges().length;
+  document.getElementById('pledgeCount').textContent = pledges.length;
+  document.getElementById('dashCount').textContent = total;
+}
+
+function renderNotes() {
+  const g = document.getElementById('notesGrid'); g.innerHTML = '';
+  const all = allPledges();
+  if (all.length === 0) {
+    const e = document.createElement('div'); e.className = 'cork-empty';
+    e.textContent = '아직 다짐이 없어요. 첫 번째 다짐을 남겨보세요!';
+    g.appendChild(e);
+  } else {
+    all.forEach((p, i) => {
+      const rot = NOTE_ROTS[i % NOTE_ROTS.length];
+      const col = NOTE_COLORS[i % NOTE_COLORS.length];
+      const n = document.createElement('div');
+      n.className = `note ${col}`;
+      n.style.cssText = `--r:${rot}deg;transform:rotate(${rot}deg)`;
+      n.innerHTML = `<div class="note-text">${p.content}</div>`;
+      g.appendChild(n);
+    });
+  }
+  updateCount();
+}
+
+async function addPledge() {
+  const inp = document.getElementById('pledgeInput');
+  const val = inp.value.trim(); if (!val) return;
+  inp.value = '';
+  try {
+    const result = await sbInsert('pledges', { content: val });
+    if (result && result.length) pledges.push(result[0]);
+    else pledges.push({ content: val, created_at: new Date().toISOString() });
+    renderNotes();
+    document.querySelector('.corkboard').scrollIntoView({behavior:'smooth', block:'start'});
+  } catch(e) {
+    alert('저장 중 오류가 발생했어요: ' + e.message);
+  }
+}
+
+document.getElementById('pledgeInput').addEventListener('keydown', e => { if (e.key === 'Enter') addPledge(); });
+
+/* ══════════════════════════════
+   INIT
+══════════════════════════════ */
+renderQuestions();
+loadGallery();
+loadPledges();
+</script>
+</body>
+</html>
