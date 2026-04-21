@@ -501,7 +501,7 @@ function toggleZoom(img) {
     document.getElementById('zoomHint').textContent = '클릭하면 2배 확대돼요';
   } else {
     img.classList.add('zoomed');
-    img.style.transform = 'scale(2)';
+    img.style.transform = 'scale(1.35)';
     img.style.transformOrigin = 'center center';
     modal.classList.add('zoomed');
     document.getElementById('zoomHint').textContent = '다시 클릭하면 원래 크기로';
