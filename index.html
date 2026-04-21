@@ -112,7 +112,7 @@ nav{background:white;border-bottom:1px solid #eee;padding:0 48px;display:flex;al
 .img-overlay.open{display:flex;}
 .img-modal{background:#1a1a2e;border-radius:16px;padding:20px;width:auto;max-width:560px;color:white;position:relative;}
 .img-art{border-radius:10px;overflow:hidden;margin-bottom:12px;background:#000;display:flex;align-items:center;justify-content:center;}
-.img-art img{width:100%;max-width:520px;max-height:55vh;object-fit:contain;display:block;cursor:zoom-in;transition:transform 0.3s ease;} .img-art img.zoomed{max-width:none;max-height:none;width:auto;height:auto;cursor:zoom-out;transform:scale(1);} .img-modal.zoomed{max-width:90vw;width:90vw;} .zoom-hint{font-size:11px;color:rgba(255,255,255,0.35);text-align:center;margin-bottom:8px;}
+.img-art img{width:100%;max-width:520px;max-height:55vh;object-fit:contain;display:block;cursor:zoom-in;transition:max-width 0.3s ease, max-height 0.3s ease;} .img-art img.zoomed{max-width:820px;max-height:80vh;cursor:zoom-out;} .img-modal.zoomed{max-width:88vw;} .zoom-hint{font-size:11px;color:rgba(255,255,255,0.35);text-align:center;margin-bottom:8px;}
 .img-ttl{font-size:20px;font-weight:700;margin-top:4px;}
 .img-meta{font-size:13px;color:#9B8DC4;margin-top:4px;}
 
@@ -490,19 +490,16 @@ function openImg(s, i) {
   document.getElementById('imgMeta').textContent = '특수학급 학생 작품 · 2025';
   document.getElementById('imgOverlay').classList.add('open');
   document.querySelector('.img-modal').classList.remove('zoomed');
-  document.getElementById('zoomHint').textContent = '클릭하면 2배 확대돼요';
+  document.getElementById('zoomHint').textContent = '클릭하면 크게 볼 수 있어요';
 }
 function toggleZoom(img) {
   const modal = document.querySelector('.img-modal');
   if (img.classList.contains('zoomed')) {
     img.classList.remove('zoomed');
-    img.style.transform = '';
     modal.classList.remove('zoomed');
-    document.getElementById('zoomHint').textContent = '클릭하면 2배 확대돼요';
+    document.getElementById('zoomHint').textContent = '클릭하면 크게 볼 수 있어요';
   } else {
     img.classList.add('zoomed');
-    img.style.transform = 'scale(1.35)';
-    img.style.transformOrigin = 'center center';
     modal.classList.add('zoomed');
     document.getElementById('zoomHint').textContent = '다시 클릭하면 원래 크기로';
   }
