@@ -112,7 +112,7 @@ nav{background:white;border-bottom:1px solid #eee;padding:0 48px;display:flex;al
 .img-overlay.open{display:flex;}
 .img-modal{background:#1a1a2e;border-radius:16px;padding:20px;width:auto;max-width:560px;color:white;position:relative;}
 .img-art{border-radius:10px;overflow:hidden;margin-bottom:12px;background:#000;display:flex;align-items:center;justify-content:center;}
-.img-art img{width:100%;max-width:520px;max-height:55vh;object-fit:contain;display:block;}
+.img-art img{width:100%;max-width:520px;max-height:55vh;object-fit:contain;display:block;cursor:zoom-in;transition:transform 0.3s ease;} .img-art img.zoomed{max-width:none;max-height:none;width:auto;height:auto;cursor:zoom-out;transform:scale(1);} .img-modal.zoomed{max-width:90vw;width:90vw;} .zoom-hint{font-size:11px;color:rgba(255,255,255,0.35);text-align:center;margin-bottom:8px;}
 .img-ttl{font-size:20px;font-weight:700;margin-top:4px;}
 .img-meta{font-size:13px;color:#9B8DC4;margin-top:4px;}
 
@@ -225,9 +225,9 @@ footer{background:#2a1f45;padding:40px 48px;text-align:center;}
   <div class="gallery-inner">
     <div class="gallery-hdr">
       <div>
-        <div class="g-label">특수학급 미술 갤러리</div>
+        <div class="g-label">특수학급 작품 및 행사 갤러리</div>
         <div class="g-title">학생 작품 전시 및 행사 사진</div>
-        <div class="g-desc">특수학급 학생들의 개성 넘치는 작품을 감상해 보세요.</div>
+        <div class="g-desc">특수학급 학생들의 개성 넘치는 작품을 감상해 보고 다채로운 행사 사진을 함께 해보세요.</div>
       </div>
       <button class="admin-btn" onclick="openAdmin()">🔒 관리자 업로드</button>
     </div>
@@ -295,6 +295,7 @@ footer{background:#2a1f45;padding:40px 48px;text-align:center;}
 <div class="img-overlay" id="imgOverlay" onclick="if(event.target===this)closeImg()">
   <div class="img-modal">
     <button class="close-x" onclick="closeImg()">✕</button>
+    <p class="zoom-hint" id="zoomHint">클릭하면 2배 확대돼요</p>
     <div class="img-art" id="imgArt"></div>
     <div class="img-ttl" id="imgTtl"></div>
     <div class="img-meta" id="imgMeta"></div>
@@ -483,12 +484,33 @@ async function saveGallery() {
 }
 
 function openImg(s, i) {
-  document.getElementById('imgArt').innerHTML = `<img src="${s.src}" alt="${s.title}">`;
+  const art = document.getElementById('imgArt');
+  art.innerHTML = `<img src="${s.src}" alt="${s.title}" onclick="toggleZoom(this)">`;
   document.getElementById('imgTtl').textContent = s.title || `작품 ${i+1}`;
   document.getElementById('imgMeta').textContent = '특수학급 학생 작품 · 2025';
   document.getElementById('imgOverlay').classList.add('open');
+  document.querySelector('.img-modal').classList.remove('zoomed');
+  document.getElementById('zoomHint').textContent = '클릭하면 2배 확대돼요';
 }
-function closeImg() { document.getElementById('imgOverlay').classList.remove('open'); }
+function toggleZoom(img) {
+  const modal = document.querySelector('.img-modal');
+  if (img.classList.contains('zoomed')) {
+    img.classList.remove('zoomed');
+    img.style.transform = '';
+    modal.classList.remove('zoomed');
+    document.getElementById('zoomHint').textContent = '클릭하면 2배 확대돼요';
+  } else {
+    img.classList.add('zoomed');
+    img.style.transform = 'scale(2)';
+    img.style.transformOrigin = 'center center';
+    modal.classList.add('zoomed');
+    document.getElementById('zoomHint').textContent = '다시 클릭하면 원래 크기로';
+  }
+}
+function closeImg() {
+  document.getElementById('imgOverlay').classList.remove('open');
+  document.querySelector('.img-modal').classList.remove('zoomed');
+}
 
 /* ══════════════════════════════
    PLEDGES
