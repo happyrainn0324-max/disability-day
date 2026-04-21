@@ -77,6 +77,11 @@ nav{background:white;border-bottom:1px solid #eee;padding:0 48px;display:flex;al
 .art-title{font-size:15px;font-weight:700;}
 .art-sub{font-size:12px;opacity:0.65;margin-top:3px;}
 .g-loading{text-align:center;color:#9B8DC4;padding:40px;font-size:14px;}
+.g-pagination{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:28px;}
+.pg-btn{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#ccc;width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;line-height:1;}
+.pg-btn:hover:not(:disabled){background:rgba(155,141,196,0.3);color:white;}
+.pg-btn:disabled{opacity:0.25;cursor:not-allowed;}
+.pg-info{font-size:14px;color:#9B8DC4;min-width:80px;text-align:center;}
 
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:500;align-items:center;justify-content:center;}
 .overlay.open{display:flex;}
@@ -90,7 +95,7 @@ nav{background:white;border-bottom:1px solid #eee;padding:0 48px;display:flex;al
 .pw-btn{padding:12px 18px;background:var(--c1);color:white;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
 .pw-err{font-size:12px;color:#FF6B8A;margin-bottom:14px;display:none;}
 .pw-err.show{display:block;}
-.upload-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+.upload-slots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;max-height:60vh;overflow-y:auto;padding-right:4px;}
 .slot-wrap{display:flex;flex-direction:column;gap:7px;}
 .upload-slot{background:rgba(255,255,255,0.04);border:1.5px dashed rgba(255,255,255,0.15);border-radius:11px;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;transition:border-color .2s;}
 .upload-slot:hover{border-color:rgba(155,141,196,0.55);}
@@ -234,6 +239,11 @@ footer{background:#2a1f45;padding:40px 48px;text-align:center;}
     <div class="g-grid" id="galleryGrid">
       <div class="g-loading" style="grid-column:1/-1">작품을 불러오는 중...</div>
     </div>
+    <div class="g-pagination">
+      <button class="pg-btn" id="pgPrev" onclick="changePage(-1)" disabled>&#8592;</button>
+      <span class="pg-info" id="pgInfo">1 / 4</span>
+      <button class="pg-btn" id="pgNext" onclick="changePage(1)">&#8594;</button>
+    </div>
   </div>
 </div>
 
@@ -344,11 +354,13 @@ async function sbInsert(table, body) {
    CONSTANTS
 ══════════════════════════════ */
 const ADMIN_PW    = '0420';
-const MAX_SLOTS   = 6;
+const MAX_SLOTS   = 30;
 const NOTE_COLORS = ['ny','npk','ng','nb','npc','nl'];
 const NOTE_ROTS   = [-4,-3,-2,-1,0,1,2,3,4];
 
 let slots   = Array.from({length: MAX_SLOTS}, (_, i) => ({id: i, title: '', src: null}));
+let galleryPage = 0;
+const PAGE_SIZE  = 6;
 let pledges = [];
 
 /* ══════════════════════════════
@@ -404,7 +416,11 @@ async function loadGallery() {
 
 function renderGallery() {
   const g = document.getElementById('galleryGrid'); g.innerHTML = '';
-  slots.forEach((s, i) => {
+  const totalPages = Math.ceil(MAX_SLOTS / PAGE_SIZE);
+  const start = galleryPage * PAGE_SIZE;
+  const pageSlots = slots.slice(start, start + PAGE_SIZE);
+  pageSlots.forEach((s, pi) => {
+    const i = start + pi;
     const c = document.createElement('div');
     c.className = 'art-card' + (s.src ? ' filled' : '');
     if (s.src) {
@@ -417,6 +433,16 @@ function renderGallery() {
     }
     g.appendChild(c);
   });
+  // update pagination controls
+  document.getElementById('pgPrev').disabled = (galleryPage === 0);
+  document.getElementById('pgNext').disabled = (galleryPage >= totalPages - 1);
+  document.getElementById('pgInfo').textContent = `${galleryPage + 1} / ${totalPages}`;
+}
+
+function changePage(dir) {
+  const totalPages = Math.ceil(MAX_SLOTS / PAGE_SIZE);
+  galleryPage = Math.max(0, Math.min(totalPages - 1, galleryPage + dir));
+  renderGallery();
 }
 
 /* ADMIN */
